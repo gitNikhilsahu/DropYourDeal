@@ -1,0 +1,1 @@
+web: gunicorn DropYourDeal.wsgi --log-file -

@@ -3,6 +3,7 @@ nik
 """
 
 import os
+import django_heroku ##
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -17,7 +18,7 @@ SECRET_KEY = 'qjb!%cm^3$*-1ur+qx!r#11y!jf0%b!haecd+$7i(q_!zv(e$e'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -46,6 +47,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',##
 ]
 
 ROOT_URLCONF = 'DropYourDeal.urls'
@@ -112,6 +114,14 @@ USE_L10N = True
 
 USE_TZ = True
 
+
+##_______________________________________________________________________________________________
+# import dj_database_url
+# DATABASES = {
+#     'default': dj_database_url.config()
+# }
+# ##
+# django_heroku.settings(locals())
 
 ##_______________________________________________________________________________________________
 AUTH_USER_MODEL = 'Account.UserAccount'
